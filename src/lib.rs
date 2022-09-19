@@ -1,7 +1,27 @@
+use std::io;
+// use libc;
+
 pub mod itch;
 pub mod moldudp;
 
+use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 pub use crate::itch::*;
+
+pub fn nasdaq_itch_multicast_addr(_side_b: bool) -> SocketAddr {
+  "233.54.12.111:26477".parse().unwrap()
+  // SocketAddr::new(IpAddr::V4(Ipv4Addr::new(233, 54, 12, 111)),26477)
+}
+
+pub fn nasdaq_glimpse_addr() -> SocketAddr {
+  "206.200.127.45:18181".parse().unwrap()
+  // SocketAddr::new(IpAddr::V4(Ipv4Addr::new(206, 200, 127, 45)), 18181)
+}
+
+pub fn recover_from_glipmse() -> io::Result<()> {
+  // let sk = libc::socket(libc::AF_INET, libc::SOCK_STREAM, 0);
+
+  Ok(())
+}
 
 #[cfg(test)]
 mod tests {
