@@ -150,7 +150,7 @@ def do_functions(xml):
     for item in xml.find('Structs'):
         if item.get('id') is None:
             continue
-        print('  fn on_{}(&mut self, msg: {});'.format(item.get('name'), struct_name(item.get('name'))))
+        print('  fn on_{}(&mut self, _msg: {}) {{}}'.format(item.get('name'), struct_name(item.get('name'))))
     print('}')
     print('')
 

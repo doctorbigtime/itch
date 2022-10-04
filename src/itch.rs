@@ -1967,29 +1967,29 @@ impl fmt::Display for EndOfSnapshot {
   }
 }
 pub trait ItchHandler {
-  fn on_system_event(&mut self, msg: SystemEvent);
-  fn on_stock_directory(&mut self, msg: StockDirectory);
-  fn on_stock_trading_action(&mut self, msg: StockTradingAction);
-  fn on_reg_sho_restriction(&mut self, msg: RegShoRestriction);
-  fn on_market_participant_position(&mut self, msg: MarketParticipantPosition);
-  fn on_mwcb_decline_level(&mut self, msg: MwcbDeclineLevel);
-  fn on_mwcb_status(&mut self, msg: MwcbStatus);
-  fn on_ipo_quoting_period_update(&mut self, msg: IpoQuotingPeriodUpdate);
-  fn on_luld_auction_collar(&mut self, msg: LuldAuctionCollar);
-  fn on_operational_halt(&mut self, msg: OperationalHalt);
-  fn on_add_order(&mut self, msg: AddOrder);
-  fn on_add_order_with_mpid(&mut self, msg: AddOrderWithMpid);
-  fn on_order_executed(&mut self, msg: OrderExecuted);
-  fn on_order_executed_with_price(&mut self, msg: OrderExecutedWithPrice);
-  fn on_order_cancel(&mut self, msg: OrderCancel);
-  fn on_order_delete(&mut self, msg: OrderDelete);
-  fn on_order_replace(&mut self, msg: OrderReplace);
-  fn on_trade(&mut self, msg: Trade);
-  fn on_cross_trade(&mut self, msg: CrossTrade);
-  fn on_broken_trade(&mut self, msg: BrokenTrade);
-  fn on_net_order_imbalance_indicator(&mut self, msg: NetOrderImbalanceIndicator);
-  fn on_retail_price_improvement_indicator(&mut self, msg: RetailPriceImprovementIndicator);
-  fn on_end_of_snapshot(&mut self, msg: EndOfSnapshot);
+  fn on_system_event(&mut self, _msg: SystemEvent) {}
+  fn on_stock_directory(&mut self, _msg: StockDirectory) {}
+  fn on_stock_trading_action(&mut self, _msg: StockTradingAction) {}
+  fn on_reg_sho_restriction(&mut self, _msg: RegShoRestriction) {}
+  fn on_market_participant_position(&mut self, _msg: MarketParticipantPosition) {}
+  fn on_mwcb_decline_level(&mut self, _msg: MwcbDeclineLevel) {}
+  fn on_mwcb_status(&mut self, _msg: MwcbStatus) {}
+  fn on_ipo_quoting_period_update(&mut self, _msg: IpoQuotingPeriodUpdate) {}
+  fn on_luld_auction_collar(&mut self, _msg: LuldAuctionCollar) {}
+  fn on_operational_halt(&mut self, _msg: OperationalHalt) {}
+  fn on_add_order(&mut self, _msg: AddOrder) {}
+  fn on_add_order_with_mpid(&mut self, _msg: AddOrderWithMpid) {}
+  fn on_order_executed(&mut self, _msg: OrderExecuted) {}
+  fn on_order_executed_with_price(&mut self, _msg: OrderExecutedWithPrice) {}
+  fn on_order_cancel(&mut self, _msg: OrderCancel) {}
+  fn on_order_delete(&mut self, _msg: OrderDelete) {}
+  fn on_order_replace(&mut self, _msg: OrderReplace) {}
+  fn on_trade(&mut self, _msg: Trade) {}
+  fn on_cross_trade(&mut self, _msg: CrossTrade) {}
+  fn on_broken_trade(&mut self, _msg: BrokenTrade) {}
+  fn on_net_order_imbalance_indicator(&mut self, _msg: NetOrderImbalanceIndicator) {}
+  fn on_retail_price_improvement_indicator(&mut self, _msg: RetailPriceImprovementIndicator) {}
+  fn on_end_of_snapshot(&mut self, _msg: EndOfSnapshot) {}
 }
 
 pub fn crack_message<T: ItchHandler>(msg: &[u8], handler: &mut T) {

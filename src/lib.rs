@@ -1,10 +1,8 @@
-use std::io;
 use std::net::{Ipv4Addr, SocketAddrV4};
 
 pub mod itch;
 pub mod moldudp;
 
-use std::net::{IpAddr, Ipv4Addr, SocketAddr};
 pub use crate::itch::*;
 
 pub fn itch_multicast_addr() -> SocketAddrV4 {
